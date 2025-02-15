@@ -101,7 +101,22 @@ nav{
 
 .stat-item h2{
     font-size: 1.5rem;
+    margin-bottom: 2px; /* Mengurangi jarak bawah dari <h2> */
+    line-height: 1.1; /* Mengurangi tinggi baris */
 }
+
+.stat-group {
+    display: flex;
+    justify-content: center; /* Memastikan elemen ada di tengah */
+    gap: 80px; /* Memberi jarak antar item */
+    margin-top: 20px; /* Memberi jarak dari teks di atasnya */
+}
+
+.stat-item {
+    text-align: center; /* Membuat teks di dalamnya rata tengah */
+    
+}
+
 
 .hero-image img{
     width: 100%;
@@ -149,14 +164,38 @@ nav{
     scroll-snap-type: x mandatory;
     gap: 20px;
     padding: 20px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    position: relative;
 }
+
+.book-item {
+    flex: 0 0 auto;
+    width: 200px;
+    transition: transform 0.3s ease; /* Animasi saat dihover */
+  }
+  
+  .book-item:hover {
+    transform: scale(1.05); /* Membesar sedikit saat dihover */
+    cursor: pointer;
+  }
   
 .book-list::-webkit-scrollbar {
-    display: none;
-}
+    height: 8px;
+  }
   
+  .book-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  .book-list::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+    transition: background 0.3s ease; /* Animasi perubahan warna */
+  }
+  
+  .book-list::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Warna saat dihover */
+  }
 .book-image {
     width: 200px;
     height: 300px;
@@ -187,7 +226,7 @@ nav{
 .book-info {
     display: grid;
 }
-  
+
 .book-rate {
     display: flex;
     align-items: center;
@@ -222,10 +261,12 @@ nav{
     
     .stat-item p {
       font-size: 1.2rem;
-      margin: 0;
+      margin-top: 0;
       color: var(--tertiary-color);
     }
 }
+
+
 
 @media screen and (max-width:768px) {
     .menu {
